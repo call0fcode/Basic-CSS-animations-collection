@@ -402,6 +402,13 @@ body {
 
 /* 6.1.5. Blurred Shadow */
 
+.box--blurred-shadow {
+  transition-duration: .3s;
+}
+
+  .box--blurred-shadow:hover {
+    box-shadow: 0 0 10px #aaa;
+  }
 
 
 
