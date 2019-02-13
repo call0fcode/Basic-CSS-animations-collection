@@ -280,112 +280,132 @@ body {
 /* 6.1.1. Side Triangle */
 
 .box--sideTriangle {
- background: linear-gradient(to right, var(--color2) 30%, var(--color1));
- transition-duration: .3s;
+  background: linear-gradient(to right, var(--color2) 30%, var(--color1));
+  transition-duration: .3s;
 }
 
   .box--sideTriangle::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 3rem solid transparent;
-  border-right: 3rem solid var(--color2);
-  border-bottom: 3rem solid transparent;
-  transition-duration: 0.3s;
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 0;
+    height: 0;
+    border-top: 3rem solid transparent;
+    border-right: 3rem solid var(--color2);
+    border-bottom: 3rem solid transparent;
+
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    transition-duration: 0.3s;
   }
 
   .box--sideTriangle:hover::before {
-  left: -2rem;
+    left: -2rem;
   }
 
 
 /* 6.1.2. Fixed Triangle */
 
-.fixed-triangle {
- background: linear-gradient(to bottom, var(--color2) 30%, var(--color3));
- transition-duration: .3s;
+.box--fixedTriangle {
+  background: linear-gradient(to bottom, var(--color2) 30%, var(--color3));
+  transition-duration: .3s;
 }
 
-.fixed-triangle::before {
- content: "";
- position: absolute;
- left: 50%;
- top: 0;
- -webkit-transform: translateX(-50%);
-         transform: translateX(-50%);
- width: 0;
- height: 0;
- border-left: 3rem solid transparent;
- border-right: 3rem solid transparent;
- border-bottom: 3rem solid var(--color2);
- transition-duration: 0.3s;
-}
+  .box--fixedTriangle::before {
+    content: "";
 
-.fixed-triangle:hover {
- -webkit-transform: translateY(1.5rem);
-         transform: translateY(1.5rem);
-}
+    position: absolute;
+    left: 50%;
+    top: 0;
 
-.fixed-triangle:hover::before {
- top: -1.5rem;
-}
+    width: 0;
+    height: 0;
+    border-left: 3rem solid transparent;
+    border-right: 3rem solid transparent;
+    border-bottom: 3rem solid var(--color2);
+
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    transition-duration: 0.3s;
+  }
+
+  .box--fixedTriangle:hover {
+    -webkit-transform: translateY(1.5rem);
+            transform: translateY(1.5rem);
+  }
+
+  .box--fixedTriangle:hover::before {
+    top: -1.5rem;
+  }
 
 
 /* 6.1.3. Folded Corner */
 
-.page-corner::before {
- content: '';
- background: linear-gradient(45deg, #fff 45%, #aaa 50%, #ccc 60%, #fff);
- width: 0;
- height: 0;
- position: absolute;
- bottom: 0;
- left: 0;
- border-radius: 0 .3rem 0 0;
- transition-duration: .5s;
+.box--foldedCorner::before {
+  content: '';
+  
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+  border-radius: 0 .3rem 0 0;
+  
+  background: linear-gradient(45deg, #fff 45%, #aaa 50%, #ccc 60%, #fff);
+  transition-duration: .5s;
 }
 
-.page-corner:hover::before {
- width: 4rem;
- height: 4rem;
-}
+  .box--foldedCorner:hover::before {
+    width: 4rem;
+    height: 4rem;
+  }
 
 
 /* 6.1.4. Fixed Shadow */
 
-.fixed-shadow {
- background: linear-gradient(-45deg, var(--color2) 30%, var(--color3));
- box-shadow: 0 0 2px black;
- transition-duration: .3s;
+.box--fixedShadow {
+  background: linear-gradient(-45deg, var(--color2) 30%, var(--color3));
+  box-shadow: 0 0 2px black;
+  transition-duration: .3s;
 }
 
-.fixed-shadow::before {
- content: '';
- position: absolute;
- left: 5%;
- bottom: -10px;
- width: 90%;
- height: 10px;
- background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 80%, #fff);
- opacity: 0;
- transition-duration: .3s;
-}
+  .box--fixedShadow::before {
+    content: '';
 
-.fixed-shadow:hover {
- -webkit-transform: translateY(-8px);
-         transform: translateY(-8px);
-}
+    position: absolute;
+    left: 5%;
+    bottom: -10px;
 
-.fixed-shadow:hover::before {
- opacity: 1;
- -webkit-transform: translatey(8px);
-         transform: translatey(8px);
-}
+    width: 90%;
+    height: 10px;
+    
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 80%, #fff);
+    opacity: 0;
+    transition-duration: .3s;
+  }
+
+  .box--fixedShadow:hover {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+
+  .box--fixedShadow:hover::before {
+    opacity: 1;
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+
+
+/* 6.1.5. Blurred Shadow */
+
+
+
+
+
 
 
 
@@ -399,10 +419,20 @@ Other Classes
 
 
 /* Shadow around object (it applies also for before and after) */
+
 .shadow-around {
- -webkit-filter: drop-shadow(0 0 2px black);
-         filter: drop-shadow(0 0 2px black);
+  -webkit-filter: drop-shadow(0 0 2px black);
+          filter: drop-shadow(0 0 2px black);
 }
+
+
+
+
+
+
+
+
+
 
 /* 
 =============
@@ -411,33 +441,38 @@ Media Queries
 */
 
 /* From here on applies for tablets screens */
+
 @media (min-width: 425px) {
+
  /* The background changes to a pink-violet color */
+
  body {
-  background: palevioletred;
+   background: palevioletred;
  }
 
  /*
  Items are arranged as a row rather than as a column like for mobile devices.
  Items wrap into new lines if there's enough place. Items horizontally centered.
  */
+ 
  .flex-container {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: stretch;
  }
  
  /*
  All cards except the title one are reduced to the
  above defined min-width and changed their margins.
  */
+
  .card:not(:first-of-type){
-  width: 22rem; /* above defined min-width */
-  margin: 0 1.5rem 3rem 1.5rem;
+   width: 22rem; /* above defined min-width */
+   margin: 0 1.5rem 3rem 1.5rem;
  }
  
  .card:not(:first-of-type)::before {
-  background: rgba(112, 193, 179, .9);
+   background: rgba(112, 193, 179, .9);
  }
 }
