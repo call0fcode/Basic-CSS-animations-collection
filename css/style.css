@@ -1,0 +1,443 @@
+/**
+ * CONTENTS
+ *
+ * 1.SETTINGS
+ *  1.1.Global...........Globally-available variables and config.
+ *
+ * 2.GENERIC
+ *  2.1.Box-sizing...........Better default `box-sizing`.
+ *
+ * 3.BASE
+ *  3.1.Headings.............Heading styles.
+ *
+ * 4.OBJECTS
+ *  4.1.Wrappers.............Wrapping and constraining elements.
+ *
+ * 5.COMPONENTS
+ *  5.1.Cards................Card basic styles.
+ *  5.2.Boxes................Boxes basic styles.
+ * 
+ * 6.ANIMATIONS
+ *  6.1.CSS animations.......Collection of boxes' animations.
+ *   6.1.1...................Side Triangle
+ *   6.1.2...................Fixed Triangle
+ *   6.1.3...................Folded Corner
+ */
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #1.SETTINGS
+\*------------------------------------*/
+
+/** 
+* 1.1.Global
+--------------------------------------*/
+
+/** 
+* Variables:
+*
+* [1] = Pale Violet-Red
+* [2] = Lapis Lazuli
+* [3] = Green Sheen
+*
+* Color palette: https://coolors.co/ffffff-b2dbbf-70c1b3-d86f91-247ba0 
+*/
+
+:root {
+  --color1: #d86f91; /* [1] */
+  --color2: #247ba0; /* [2] */
+  --color3: #70c1b3; /* [3] */
+}
+
+
+/**
+* Sets the default html's font-size to 10px instead of 16px.
+* So it's easier to control the rems (1rem = 10px, 1.4rem = 14px and so on).
+* See here: https://snook.ca/archives/html_and_css/font-size-with-rem
+*/
+
+html {
+ font-size: 62.5%;
+}
+
+
+body {
+ font-family: "Ubuntu", "Arial", sans-serif;
+ font-size: 1.6rem;
+ line-height: 1.4;
+ text-align: center;
+ padding-top: 15px;
+ background: linear-gradient(-45deg, var(--color3) 40%, #b2dbbf);
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #2.GENERIC
+\*------------------------------------*/
+
+/** 
+* 2.1.Box-sizing
+--------------------------------------*/
+
+* {
+ box-sizing: border-box;
+}
+
+  *::before,
+  *::after {
+   box-sizing: inherit;
+  }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #3.BASE
+\*------------------------------------*/
+
+/** 
+* 3.1.Headings
+--------------------------------------*/
+
+.title,
+.subtitle {
+ color: white;
+ text-shadow: 2px 2px 4px black;
+ -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+}
+
+.title {
+ font-size: 3.5rem;
+}
+
+.subtitle {
+ font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #4.OBJECTS
+\*------------------------------------*/
+
+/** 
+* 4.1.Wrappers
+--------------------------------------*/
+
+.flex-col-centered {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #5.COMPONENTS
+\*------------------------------------*/
+
+/** 
+* 5.1.Cards
+--------------------------------------*/
+
+/* Basic card style */
+
+.card { 
+ position: relative;
+ 
+ width: 90%;
+ min-width: 22rem;
+ margin-bottom: 3rem;
+ padding: 3rem 2rem 2.5rem 2rem;
+ 
+ background: white;
+ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+  /* Number boxes on the top-left of each card */
+
+  .card::before {
+   content: '';
+
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 4rem;
+   width: 4rem;
+
+   background: rgba(216, 111, 145, .9);
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+   color: white;
+   text-shadow: 2px 2px 4px black;
+  }
+
+  /* Label on the top-left corner of the title card */
+
+  .card:nth-of-type(1)::before {
+   content: 'created by gcjuan';
+
+   top: -.5rem;
+   left: .3rem;
+   width: auto;
+   padding: 1rem;
+
+   background: rgba(0, 0, 0, 1);
+   border-radius: 0 0 .3rem .3rem;
+
+   font-family: 'Roboto', sans-serif;
+   font-size: 1.3rem;
+  }
+
+  /* Content of numbered squares on the top-left side of each card */
+
+  .card:nth-of-type(2)::before  { content:  '1'; }
+  .card:nth-of-type(3)::before  { content:  '2'; }
+  .card:nth-of-type(4)::before  { content:  '3'; }
+  .card:nth-of-type(5)::before  { content:  '4'; }
+  .card:nth-of-type(6)::before  { content:  '5'; }
+  .card:nth-of-type(7)::before  { content:  '6'; }
+  .card:nth-of-type(8)::before  { content:  '7'; }
+  .card:nth-of-type(9)::before  { content:  '8'; }
+  .card:nth-of-type(10)::before { content:  '9'; }
+  .card:nth-of-type(11)::before { content: '10'; }
+  .card:nth-of-type(12)::before { content: '11'; }
+  .card:nth-of-type(13)::before { content: '12'; }
+  .card:nth-of-type(14)::before { content: '13'; }
+  .card:nth-of-type(15)::before { content: '14'; }
+
+
+/** 
+* 5.2.Boxes
+--------------------------------------*/
+
+/* Basic box style */
+
+.box {
+ background: linear-gradient(45deg, var(--color2) 30%, var(--color1));
+ width: 14rem;
+ height: 12rem;
+ border-radius: 0.3rem;
+ position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------*\
+  #6.ANIMATIONS
+\*------------------------------------*/
+
+/** 
+* 6.1.CSS animations
+--------------------------------------*/
+
+/* 6.1.1. Side Triangle */
+
+.box--sideTriangle {
+ background: linear-gradient(to right, var(--color2) 30%, var(--color1));
+ transition-duration: .3s;
+}
+
+  .box--sideTriangle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 3rem solid transparent;
+  border-right: 3rem solid var(--color2);
+  border-bottom: 3rem solid transparent;
+  transition-duration: 0.3s;
+  }
+
+  .box--sideTriangle:hover::before {
+  left: -2rem;
+  }
+
+
+/* 6.1.2. Fixed Triangle */
+
+.fixed-triangle {
+ background: linear-gradient(to bottom, var(--color2) 30%, var(--color3));
+ transition-duration: .3s;
+}
+
+.fixed-triangle::before {
+ content: "";
+ position: absolute;
+ left: 50%;
+ top: 0;
+ -webkit-transform: translateX(-50%);
+         transform: translateX(-50%);
+ width: 0;
+ height: 0;
+ border-left: 3rem solid transparent;
+ border-right: 3rem solid transparent;
+ border-bottom: 3rem solid var(--color2);
+ transition-duration: 0.3s;
+}
+
+.fixed-triangle:hover {
+ -webkit-transform: translateY(1.5rem);
+         transform: translateY(1.5rem);
+}
+
+.fixed-triangle:hover::before {
+ top: -1.5rem;
+}
+
+
+/* 6.1.3. Folded Corner */
+
+.page-corner::before {
+ content: '';
+ background: linear-gradient(45deg, #fff 45%, #aaa 50%, #ccc 60%, #fff);
+ width: 0;
+ height: 0;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ border-radius: 0 .3rem 0 0;
+ transition-duration: .5s;
+}
+
+.page-corner:hover::before {
+ width: 4rem;
+ height: 4rem;
+}
+
+
+/* 6.1.4. Fixed Shadow */
+
+.fixed-shadow {
+ background: linear-gradient(-45deg, var(--color2) 30%, var(--color3));
+ box-shadow: 0 0 2px black;
+ transition-duration: .3s;
+}
+
+.fixed-shadow::before {
+ content: '';
+ position: absolute;
+ left: 5%;
+ bottom: -10px;
+ width: 90%;
+ height: 10px;
+ background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 80%, #fff);
+ opacity: 0;
+ transition-duration: .3s;
+}
+
+.fixed-shadow:hover {
+ -webkit-transform: translateY(-8px);
+         transform: translateY(-8px);
+}
+
+.fixed-shadow:hover::before {
+ opacity: 1;
+ -webkit-transform: translatey(8px);
+         transform: translatey(8px);
+}
+
+
+
+
+
+/* 
+=============
+Other Classes
+=============
+*/
+
+
+/* Shadow around object (it applies also for before and after) */
+.shadow-around {
+ -webkit-filter: drop-shadow(0 0 2px black);
+         filter: drop-shadow(0 0 2px black);
+}
+
+/* 
+=============
+Media Queries
+=============
+*/
+
+/* From here on applies for tablets screens */
+@media (min-width: 425px) {
+ /* The background changes to a pink-violet color */
+ body {
+  background: palevioletred;
+ }
+
+ /*
+ Items are arranged as a row rather than as a column like for mobile devices.
+ Items wrap into new lines if there's enough place. Items horizontally centered.
+ */
+ .flex-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+ }
+ 
+ /*
+ All cards except the title one are reduced to the
+ above defined min-width and changed their margins.
+ */
+ .card:not(:first-of-type){
+  width: 22rem; /* above defined min-width */
+  margin: 0 1.5rem 3rem 1.5rem;
+ }
+ 
+ .card:not(:first-of-type)::before {
+  background: rgba(112, 193, 179, .9);
+ }
+}
