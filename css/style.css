@@ -24,6 +24,12 @@
  *   6.1.3...................Folded Corner
  *   6.1.4...................Fixed Shadow
  *   6.1.5...................Blurred Shadow
+ *   6.1.6...................Radial Shadow
+ *
+ * 7.OTHER CLASSES
+ *
+ * 8.MEDIA QUERIES
+ *  8.1.Big screens..........From 425px onwards
  */
 
 
@@ -413,6 +419,40 @@ body {
   }
 
 
+/* 6.1.6. Radial Shadow */
+
+.box--radial-shadow::before,
+.box--radial-shadow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 12px;
+  width: 100%;
+
+  opacity: 0;
+  transition: .3s;
+}
+
+  .box--radial-shadow::before {
+  bottom: 100%;
+
+  background: radial-gradient(ellipse at 50% 150%,
+                            rgba(0,0,0,.3) 0%, 
+                            rgba(0,0,0,0) 80%);
+}
+
+.box--radial-shadow::after {
+  top: 100%;
+
+  background: radial-gradient(ellipse at 50% -50%,
+                            rgba(0,0,0,.3) 0%, 
+                            rgba(0,0,0,0) 80%);
+}
+
+  .box--radial-shadow:hover::before,
+  .box--radial-shadow:hover::after {
+    opacity: 1;
+  }
 
 
 
@@ -420,12 +460,12 @@ body {
 
 
 
-/* 
-=============
-Other Classes
-=============
-*/
 
+
+
+/*------------------------------------*\
+  #7.OTHER CLASSES
+\*------------------------------------*/
 
 /* Shadow around object (it applies also for before and after) */
 
@@ -443,13 +483,13 @@ Other Classes
 
 
 
-/* 
-=============
-Media Queries
-=============
-*/
+/*------------------------------------*\
+  #8.MEDIA QUERIES
+\*------------------------------------*/
 
-/* From here on applies for tablets screens */
+/** 
+* 8.1.Big screens
+--------------------------------------*/
 
 @media (min-width: 425px) {
 
@@ -460,8 +500,11 @@ Media Queries
  }
 
  /*
- Items are arranged as a row rather than as a column like for mobile devices.
- Items wrap into new lines if there's enough place. Items horizontally centered.
+ - From tablet size onwards items are arranged as a row rather than
+   as a column as for mobile devices.
+
+ - Items wrap into new lines if there's enough place.
+   Items horizontally centered.
  */
  
  .flex-container {
