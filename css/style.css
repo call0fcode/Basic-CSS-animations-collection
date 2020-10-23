@@ -483,9 +483,9 @@ body {
           filter: drop-shadow(0 0 2px black);
 }
 
-/* It shows 'Effect still not implemented' */
+/* It shows 'Animation still not implemented' */
 .not-implemented::after {
- content: 'Effect still not implemented';
+ content: 'Animation still not implemented';
  position: relative;
  top: 40px;
  color: white;
