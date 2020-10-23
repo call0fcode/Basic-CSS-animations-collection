@@ -474,6 +474,14 @@ body {
           filter: drop-shadow(0 0 2px black);
 }
 
+/* It shows 'Effect still not implemented' */
+.not-implemented::after {
+ content: 'Effect still not implemented';
+ position: relative;
+ top: 40px;
+ color: white;
+ text-shadow: 2px 2px black;
+}
 
 
 
