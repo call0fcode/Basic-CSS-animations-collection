@@ -222,7 +222,7 @@ body {
   /* Label on the top-left corner of the title card */
 
   .card:nth-of-type(1)::before {
-   content: 'created by gcjuan';
+   content: 'created by call0fcode';
 
    top: -.5rem;
    left: .3rem;
@@ -455,6 +455,15 @@ body {
   }
 
 
+/* 6.1.7. External Shadow */
+
+.box--externalShadow {
+  background: linear-gradient(-45deg, var(--color2) 30%, var(--color3));
+  box-shadow: 0 0 2px black;
+  transition-duration: .3s;
+}
+
+
 
 
 
@@ -501,38 +510,47 @@ body {
 
 @media (min-width: 425px) {
 
- /* The background changes to a pink-violet color */
+  /* The background changes to a pink-violet color */
 
- body {
-   background: palevioletred;
- }
+  body {
+    background: palevioletred;
+  }
 
- /*
- - From tablet size onwards items are arranged as a row rather than
-   as a column as for mobile devices.
+  /*
+  - From tablet size onwards items are arranged as a row rather than
+    as a column as for mobile devices.
 
- - Items wrap into new lines if there's enough place.
-   Items horizontally centered.
- */
- 
- .flex-col-centered {
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: stretch;
- }
- 
- /*
- All cards except the title one are reduced to the
- above defined min-width and changed their margins.
- */
+  - Items wrap into new lines if there's enough place.
+    Items horizontally centered.
+  */
+  
+  .flex-col-centered {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  /*
+  All cards except the title one are reduced to the
+  above defined min-width and changed their margins.
+  */
 
- .card:not(:first-of-type){
-   width: 22rem; /* above defined min-width */
-   margin: 0 1.5rem 3rem 1.5rem;
- }
- 
- .card:not(:first-of-type)::before {
-   background: rgba(112, 193, 179, .9);
- }
+  .card:not(:first-of-type){
+    width: 22rem; /* above defined min-width */
+    margin: 0 1.5rem 3rem 1.5rem;
+  }
+  
+  .card:not(:first-of-type)::before {
+    background: rgba(112, 193, 179, .9);
+  }
+  
+  /*
+  This helps aligning the boxes to the end of the
+  card on the cards with one-line titles.
+  */
+  .box {
+    align-self: flex-end;
+  }
+
 }
